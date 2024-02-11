@@ -1,5 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:page_transition/page_transition.dart';
+
+import '../Carousel_Page/carousel_page.dart';
+import '../constants.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -9,14 +15,36 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  String _imageAssetPath =
+      'lib/View/Asset/Splash_Page_Element/logo_illustration.png';
+  double _imageWidth = 270;
+  double _imageHeight = 270;
+
   @override
-  // J: init state function
   void initState() {
     super.initState();
     setTransparentStatusBar();
+
+    // J: Start a timer to change the image asset after 3 seconds
+    Timer(const Duration(seconds: 2), () {
+      setState(() {
+        _imageAssetPath =
+            'lib/View/Asset/Splash_Page_Element/celengan_logo.png';
+        _imageWidth = 240;
+        _imageHeight = 240;
+        Timer(const Duration(seconds: 1), () {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                type: PageTransitionType.fade,
+                duration: const Duration(milliseconds: 600),
+                child: const CarouselPage(),
+              ));
+        });
+      });
+    });
   }
 
-  // J: transparent status bar function
   void setTransparentStatusBar() {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
@@ -26,12 +54,8 @@ class _SplashPageState extends State<SplashPage> {
     );
   }
 
-  // J: build splash page intro screen
   @override
   Widget build(BuildContext context) {
-    // J: Main background color
-    const mainBackgroundColor = Color(0xff141F23);
-
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -39,18 +63,16 @@ class _SplashPageState extends State<SplashPage> {
       ),
       child: Scaffold(
         body: Container(
+          alignment: Alignment.topCenter,
           color: mainBackgroundColor,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                child: Center(
-                  child: Image.asset(
-                      // J: Logo illustration splash page
-                      'lib/View/Asset/Splash_Page_Element/logo_illustration.png',
-                      width: 300,
-                      height: 300,
-                      isAntiAlias: true),
+              Center(
+                child: Image.asset(
+                  _imageAssetPath,
+                  width: _imageWidth,
+                  height: _imageHeight,
                 ),
               ),
             ],

@@ -32,6 +32,7 @@ dependencies:
     sdk: flutter
   hive:
   hive_flutter:
+  page_transition: ^2.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -60,7 +61,15 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
+    - lib/View/Asset/Language/
     - lib/View/Asset/Splash_Page_Element/
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: lib/View/Fonts/Poppins-Bold.ttf
+        - asset: lib/View/Fonts/Poppins-Medium.ttf
+        - asset: lib/View/Fonts/Poppins-Regular.ttf
+        - asset: lib/View/Fonts/Poppins-SemiBold.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
