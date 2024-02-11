@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "219568437454",
+    "project_id": "celengan-mobile-firebase",
+    "storage_bucket": "celengan-mobile-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219568437454:android:ef5e190d68e0c3068a789f",
+        "android_client_info": {
+          "package_name": "com.example.celengan_ayam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219568437454-s1r0eu8f11auj9cv6e1am0lbmshelib0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.celengan_ayam",
+            "certificate_hash": "499f7904272f5c45b7618c2b55ec1d40de4627d0"
+          }
+        },
+        {
+          "client_id": "219568437454-c0lkgn5o94mo3rk4kams3093h2r3qicr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGC5PkrrDO6F7CxIL1jouwS_WRrhyyXH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219568437454-c0lkgn5o94mo3rk4kams3093h2r3qicr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "219568437454-nn83tk61dcj1iamaviht1vu0dvl123sj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.celenganAyam"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
