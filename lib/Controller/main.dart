@@ -29,9 +29,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        title: 'Flutter Demo',
-        home: SplashPage() // J: application will goto splash page first
-        );
+    return MaterialApp(
+      title: 'Flutter Demo',
+      // home: SplashPage() // J: application will goto splash page first
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Celengan"),
+          backgroundColor: Colors.blue,
+          centerTitle: true,
+        ),
+      ),
+    );
   }
 }

@@ -1,0 +1,12 @@
+*Halaman Login*
+
+1. Google account or username
+2. Password
+
+*Halaman Register*
+
+1. Google account
+2. Username
+3. Password
+4. ToS (Terms of Service)
+Flow: Google account -> Password (beda dari pass google account) -> Username & ToS
