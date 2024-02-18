@@ -1,13 +1,14 @@
 import 'package:hive/hive.dart';
 
-part 'saldo.g.dart';
+part 'parts/saldo.g.dart';
 
 @HiveType(typeId: 2)
 class Saldo {
-  Saldo(
-      {required this.userId,
-      required this.balance,
-      required this.criticalLimit});
+  Saldo({
+    required this.userId,
+    required this.balance,
+    required this.criticalLimit,
+  });
 
   @HiveField(0)
   double userId;

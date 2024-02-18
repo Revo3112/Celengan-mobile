@@ -1,26 +1,21 @@
-import 'package:celengan_ayam/Model/local_database/saldo.dart';
-import 'package:celengan_ayam/Model/local_database/transaction.dart';
-import 'package:celengan_ayam/Model/local_database/user_record.dart';
-import 'package:celengan_ayam/firebase_options.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:celengan_ayam/Model/Utils/firebase_database.dart';
+import 'package:celengan_ayam/Model/Utils/firebase_options.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 import '../Model/boxes.dart';
 import '../View/Splash_Page/splash_page.dart';
 
+import 'package:celengan_ayam/testing.dart';
+
+// S: we used async in the main function because we want to continuously connecting to the firebase database
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+
+  // S: start the firebase
+  await FirebaseService.initialize(
+    DefaultFirebaseOptions.currentPlatform
   );
-  await Hive.initFlutter();
-  Hive.registerAdapter(TransactionAdapter());
-  Hive.registerAdapter(SaldoAdapter());
-  Hive.registerAdapter(PersonAdapter());
-  boxTransaction = await Hive.openBox<Transaction>('transaction');
-  boxSaldo = await Hive.openBox<Saldo>('saldo');
-  boxPerson = await Hive.openBox<Person>('person');
+  
   runApp(const MyApp());
 }
 
@@ -29,16 +24,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
       // home: SplashPage() // J: application will goto splash page first
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Celengan"),
-          backgroundColor: Colors.blue,
-          centerTitle: true,
-        ),
-      ),
+      home: Testing(),
     );
   }
 }

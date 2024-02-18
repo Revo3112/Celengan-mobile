@@ -55,6 +55,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '219568437454',
     projectId: 'celengan-mobile-firebase',
     storageBucket: 'celengan-mobile-firebase.appspot.com',
+    databaseURL: 'https://celengan-mobile-firebase-default-rtdb.asia-southeast1.firebasedatabase.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(

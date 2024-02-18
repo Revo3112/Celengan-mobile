@@ -19,6 +19,11 @@ function(list_prepend LIST_NAME PREFIX)
     set(${LIST_NAME} "${NEW_LIST}" PARENT_SCOPE)
 endfunction()
 
+# Do platform specific post target stuff
+if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+  install(FILES /home/zuruz/Documents/Celengan-mobile/lib/Controller/main.dart DESTINATION /home/zuruz/opt/) # /usr/share?
+endif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+
 # === Flutter Library ===
 # System-level dependencies.
 find_package(PkgConfig REQUIRED)

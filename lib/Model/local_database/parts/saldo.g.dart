@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'saldo.dart';
+part of '../saldo.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
